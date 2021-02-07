@@ -8,7 +8,7 @@ Hopefully these notes will help someone out on the internet.
 The hyperparameter optimization example is copied from [mlflow/examples/hyperparam](https://github.com/mlflow/mlflow/tree/master/examples/hyperparam)
 - `hyperparam` shows how to do hyperparameter tuning with MLflow and some popular optimization libraries.
 - See the original `examples/hyperparam/README.rst` for details
-> This example tries to optimize the RMSE metric of a Keras deep learning model on a wine quality dataset.
+    > This example tries to optimize the RMSE metric of a Keras deep learning model on a wine quality dataset.
 
 # Install Conda on ARM
 Install Miniforge for Mac OS X arm64 (Apple Silicon): https://github.com/conda-forge/miniforge Remember not to run this in a Rosetta Terminal, if you created one.
@@ -28,7 +28,7 @@ conda activate mlflow38
 conda install -c conda-forge scikit-learn
 pip3 install -r requirements.txt
 ```
-Navigate to the unpacked location of the tensorflow_macos archive:
+After downloading and unpacking the archive, navigate to the `Downloads`:
 ```sh
 # install tensorflow
 ./tensorflow_macos/install_venv.sh --python=/Users/YOURUSERNAMEHERE/miniforge3/envs/mlflow38/bin/python3 --prompt 
