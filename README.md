@@ -35,7 +35,7 @@ Navigate to the unpacked location of the tensorflow_macos archive:
 
 This opens a prompt where you are asked for a path to new or existing virtual environment
 ```
-Path to new or existing virtual environment [default: /Users/marie/tensorflow_macos_venv/]: /Users/YOURUSERNAMEHERE/miniforge3/envs/mlflow38/
+Path to new or existing virtual environment [default: /Users/YOURUSERNAMEHERE/tensorflow_macos_venv/]: /Users/YOURUSERNAMEHERE/miniforge3/envs/mlflow38/
 ```
 
 
@@ -76,8 +76,12 @@ results under `hyperparam_experiment_id`.
 You can compare these results by using `mlflow ui`.
 
 # Note
-Add `--no-conda` to the `mlflow run` commands.
+1. Add `--no-conda` to the `mlflow run` commands.
 
 > By default mlflow run installs all dependencies using conda. To run a project without using conda, you can provide the --no-conda option to mlflow run. In this case, you must ensure that the necessary dependencies are already installed in your Python environment. [(quickstart)](https://www.mlflow.org/docs/latest/quickstart.html)
 
 `Tensorflow` cannot be installed with `pip` in a virtual environment running on ARM, therefore we have to use the existing `mlflow38` environment.
+
+---
+
+2. End of maintenance for [GPyOpt](https://github.com/SheffieldML/GPyOpt)
