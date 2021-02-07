@@ -4,17 +4,17 @@ channels:
   - anaconda
   - conda-forge
 dependencies:
-  - python=3.6
-  - numpy=1.14.3
-  - pandas=0.22.0
-  - scikit-learn=0.19.1
-  - matplotlib=2.2.2
-  - keras==2.2.2
+  - python=3.8
+  - numpy=1.20.0
+  - pandas=1.2.1
+  - scikit-learn=0.24.1
+  - matplotlib=3.3.4
   - pip
   - pip:
+    - tensorflow>=2.4.0rc0
     - mlflow>=1.0
-    - Gpy==1.9.2
-    - GpyOpt==1.2.5
+    - Gpy==1.9.9
+    - GpyOpt==1.2.6
     - pyDOE==0.3.8
-    - hyperopt==0.1
+    - hyperopt==0.2.5
 
