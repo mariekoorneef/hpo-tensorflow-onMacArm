@@ -56,6 +56,7 @@ def run(training_data, max_runs, max_p, epochs, metric, seed):
                         "seed": str(seed),
                     },
                     experiment_id=experiment_id,
+                    use_conda=False,
                     synchronous=False,
                 )
                 succeeded = p.wait()

@@ -105,6 +105,7 @@ def run(
                         "seed": str(seed),
                     },
                     experiment_id=experiment_id,
+                    use_conda=False, # We are already in the environment
                     synchronous=False,
                 )
                 succeeded = p.wait()
