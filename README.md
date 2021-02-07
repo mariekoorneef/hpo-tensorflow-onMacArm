@@ -1,6 +1,6 @@
-# Hyperparemeter Optimization with MLflow on Tensorflow model
+# Hyperparemeter Optimization with MLflow
 
-I have an Apple Silicon ARM Mac and I had to do some work to spin up my Data Science environment to e.g. get `mlflow` and `Tensorflow` modelling work. 
+I have an Apple Silicon ARM Mac and I had to do some work to spin up my Data Science environment to e.g. get `mlflow` and `Tensorflow` to work. 
 
 Hopefully these notes will help someone out on the internet.
 
@@ -8,6 +8,7 @@ Hopefully these notes will help someone out on the internet.
 The hyperparameter optimization example is copied from [mlflow/examples/hyperparam](https://github.com/mlflow/mlflow/tree/master/examples/hyperparam)
 - `hyperparam` shows how to do hyperparameter tuning with MLflow and some popular optimization libraries.
 - See the original `examples/hyperparam/README.rst` for details
+> This example tries to optimize the RMSE metric of a Keras deep learning model on a wine quality dataset.
 
 # Install Conda on ARM
 Install Miniforge for Mac OS X arm64 (Apple Silicon): https://github.com/conda-forge/miniforge Remember not to run this in a Rosetta Terminal, if you created one.
