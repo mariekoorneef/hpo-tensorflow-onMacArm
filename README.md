@@ -28,7 +28,7 @@ conda activate mlflow38
 conda install -c conda-forge scikit-learn
 pip3 install -r requirements.txt
 ```
-After downloading and unpacking the archive, navigate to the `Downloads`:
+After downloading and unpacking the archive, navigate to the `Downloads` folder:
 ```sh
 # install tensorflow
 ./tensorflow_macos/install_venv.sh --python=/Users/YOURUSERNAMEHERE/miniforge3/envs/mlflow38/bin/python3 --prompt 
