@@ -1,0 +1,5 @@
+Gpy==1.9.9
+GpyOpt==1.2.6
+mlflow==1.13.1
+hyperopt==0.2.5
+pyDOE==0.3.8
