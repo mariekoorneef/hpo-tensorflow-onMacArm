@@ -10,16 +10,19 @@ import warnings
 
 import math
 
-import keras
+# import keras
+
 import numpy as np
 import pandas as pd
 
 import click
 
-from keras.callbacks import Callback
-from keras.models import Sequential
-from keras.layers import Dense, Lambda
-from keras.optimizers import SGD
+import tensorflow as tf
+
+from tensorflow.keras.callbacks import Callback
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense, Lambda
+from tensorflow.keras.optimizers import SGD
 from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
 from sklearn.model_selection import train_test_split
 
@@ -91,7 +94,7 @@ class MLflowCheckpoint(Callback):
             # Log the model with mlflow and also evaluate and log on test set.
             self._best_train_loss = train_loss
             self._best_val_loss = val_loss
-            self._best_model = keras.models.clone_model(self.model)
+            self._best_model = tf.keras.models.clone_model(self.model)
             self._best_model.set_weights([x.copy() for x in self.model.get_weights()])
             preds = self._best_model.predict(self._test_x)
             eval_and_log_metrics("test", self._test_y, preds, epoch)
@@ -117,15 +120,15 @@ def run(training_data, epochs, batch_size, learning_rate, momentum, seed):
     train, test = train_test_split(data, random_state=seed)
     train, valid = train_test_split(train, random_state=seed)
     # The predicted column is "quality" which is a scalar from [3, 9]
-    train_x = train.drop(["quality"], axis=1).as_matrix()
+    train_x = train.drop(["quality"], axis=1).to_numpy()
     train_x = (train_x).astype("float32")
-    train_y = train[["quality"]].as_matrix().astype("float32")
-    valid_x = (valid.drop(["quality"], axis=1).as_matrix()).astype("float32")
+    train_y = train[["quality"]].to_numpy().astype("float32")
+    valid_x = (valid.drop(["quality"], axis=1).to_numpy()).astype("float32")
 
-    valid_y = valid[["quality"]].as_matrix().astype("float32")
+    valid_y = valid[["quality"]].to_numpy().astype("float32")
 
-    test_x = (test.drop(["quality"], axis=1).as_matrix()).astype("float32")
-    test_y = test[["quality"]].as_matrix().astype("float32")
+    test_x = (test.drop(["quality"], axis=1).to_numpy()).astype("float32")
+    test_y = test[["quality"]].to_numpy().astype("float32")
 
     with mlflow.start_run():
         if epochs == 0:  # score null model
